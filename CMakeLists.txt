@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(imagedecoder.heif)
+project(imagedecoder.heif.px)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR})
 

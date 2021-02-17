@@ -1,19 +1,14 @@
---- a/libde265/CMakeLists.txt
-+++ b/libde265/CMakeLists.txt
-@@ -90,7 +90,7 @@
-   add_subdirectory (x86)
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -49,7 +49,7 @@
+ 
+ option(DISABLE_SSE "Disable SSE optimizations" OFF)
+ 
+-option(BUILD_SHARED_LIBS "Build shared library" ON)
++option(BUILD_SHARED_LIBS "Build shared library" OFF)
+ if(NOT BUILD_SHARED_LIBS)
+   add_definitions(-DLIBDE265_STATIC_BUILD)
  endif()
- 
--add_library(${PROJECT_NAME} SHARED ${libde265_sources} ${ENCODER_OBJECTS} ${X86_OBJECTS})
-+add_library(${PROJECT_NAME} ${libde265_sources} ${ENCODER_OBJECTS} ${X86_OBJECTS})
- target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
- 
- write_basic_package_version_file(${PROJECT_NAME}ConfigVersion.cmake COMPATIBILITY ExactVersion)
-@@ -107,3 +107,4 @@
- 
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake DESTINATION
-     "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
-+
 --- a/libde265/de265.h
 +++ b/libde265/de265.h
 @@ -38,9 +38,9 @@
