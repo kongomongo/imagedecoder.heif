@@ -1,12 +1,11 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -53,7 +53,7 @@
- if (UNIX)
-   find_package(PkgConfig)
-   pkg_check_modules(LIBDE265 libde265)
--  pkg_check_modules(X265 x265)
-+  # pkg_check_modules(X265 x265)
- endif()
+@@ -58,7 +58,7 @@
+     find_package(Libde265)
+ endif ()
  
- # Create libheif pkgconfig file
-
+-option(WITH_X265 "Build x265 encoder" ON)
++option(WITH_X265 "Build x265 encoder" OFF)
+ if (WITH_X265)
+     find_package(X265)
+ endif ()

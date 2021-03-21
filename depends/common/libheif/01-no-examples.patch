@@ -1,11 +1,11 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -79,6 +79,6 @@
+@@ -159,7 +159,7 @@
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libheif.pc
          DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
  
--add_subdirectory (examples)
-+#add_subdirectory (examples)
- add_subdirectory (libheif)
- add_subdirectory (gdk-pixbuf)
-
+-option(WITH_EXAMPLES "Build examples" ON)
++option(WITH_EXAMPLES "Build examples" OFF)
+ 
+ if(WITH_EXAMPLES)
+     add_subdirectory (examples)
